@@ -1,0 +1,44 @@
+{
+  "name": "@playwright/test",
+  "version": "1.0.0",
+  "author": "Karan Shah",
+  "engines": {
+    "node": ">=12.7.0"
+  },
+  "description": "Sample package to show jest playwright tests run on BrowserStack",
+  "scripts": {
+    "test": "npx playwright test --config=./playwright.config.ts",
+    "test:local": "BROWSERSTACK_LOCAL=true npx playwright test --config=./playwright-local.config.ts",
+    "pw:dev": "npx playwright test --project Dev ; allure serve",
+    "pw:test": "npx playwright test",
+    "pw:stage": "npx playwright test --config=./playwright.config.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.20.0",
+    "@types/faker": "^5.5.7",
+    "@types/supertest": "^2.0.11",
+    "@types/uuid": "^8.3.1",
+    "allure-playwright": "^2.0.0-beta.14",
+    "browserstack-local": "^1.4.8",
+    "eslint-plugin-playwright": "^0.4.0",
+    "faker": "^5.5.3",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.1",
+    "playwright-test": "^7.2.2",
+    "supertest": "^6.1.5",
+    "uuid": "^8.3.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+kind: pipeline
+type: docker
+name: GMB Web Automation
+steps: 
+
+  - name: Run Tests 
+    image: mcr.microsoft.com/playwright:v1.19.1-focal
+    commands:
+      - npm i
+      - npx playwright install-deps
+      - npx playwright install chrome
+      - npx playwright install webkit
+      - npx playwright install firefox
+      - yarn pw:stage
+trigger:
+  branch: 
+    - master
+    - Fix
+  events:
+    - push
+
+    
+
+    
